@@ -1,4 +1,4 @@
-name: flake8
+name: flake8  # name of the action
 
 on:
    # Trigger the workflow on push or pull request,
@@ -10,16 +10,17 @@ on:
      branches:
        - master
 
-jobs:
+jobs:  # note that each job is run on a different runner
   flake8:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2  #  use script at github action market
+    # place to pull project to local machine, and checkout to branch
 
     - name: Set up Python 3.9
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v1  # another github action market script
       with:
         python-version: 3.9
 
